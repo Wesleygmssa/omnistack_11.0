@@ -32,6 +32,10 @@ Foi construída uma API REST no backend, a parte visual foi feita com ReactJS no
 
 ![image](https://user-images.githubusercontent.com/21963291/78192138-e9adb280-744d-11ea-8f2a-06c9de997e26.png) 
 
+#### execução de teste
+
+  <img src="TheBeHero.gif" >
+
 ### Autor
 
 Wesley Guerra.
