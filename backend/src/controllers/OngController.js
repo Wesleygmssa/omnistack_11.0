@@ -23,7 +23,7 @@ module.exports ={
             uf,
         })
 
-        return res.json({ id });
+        return res.json({ id });// retornado o ex: id {0d3059bd}
 
     }
 };

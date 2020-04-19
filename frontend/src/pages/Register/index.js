@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
-import api from '../../services/api';
+import api from '../../services/api'; // importando api
 
 import './styles.css';
 
 import logoImg from '../../assets/logo.svg';
 
 export default function Register() {
+
   const history = useHistory();
+
 //criando estado para pegar dados do input
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -18,9 +20,11 @@ export default function Register() {
   const [uf, setUf] = useState('');
 
   async function handleRegister(event) { // functionresponsável por fazer o cadastro do usuário
+
     event.preventDefault();//tirando comportamento padrão do formulário
-/* Aqui fica o acesso a todas a informações que será passada para o banco de dados */
-    const data = {
+
+
+    const data = { /* Aqui fica o acesso a todas a informações que será passada para o banco de dados */
       name,
       email,
       whatsapp,
@@ -28,18 +32,21 @@ export default function Register() {
       uf
     };
 
-    try {
-      const response = await api.post('/ongs', data);/* enviado o metodo post */ /* data = enviado dados do formualrio */
+    try {/* enviado o metodo post */ 
+      const response = await api.post('/ongs', data); /* data = enviado dados do formualrio */
     
       alert(`Seu ID de acesso: ${response.data.id}`);
 
       history.push('/'); //direcionando para pagina iniical
-    } catch (error) {
+
+    } catch (error) {// else
+
       alert('Erro no cadastro, tente novamente!');
     }
-  }
+  }/* fim da function handleRegister */
 
   return (
+
     <div className="register-container">
       <div className="content">
         <section>
