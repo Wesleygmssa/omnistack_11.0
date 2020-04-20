@@ -9,9 +9,9 @@ import api from '../../services/api';
 import './styles.css';
 
 export default function Profile() {
-  const ongName = localStorage.getItem('ongName');
-  const ongId = localStorage.getItem('ongId');
-  const [incidents, setIncidents] = useState([]);
+  const ongName = localStorage.getItem('ongName'); // pegando o armazenamento local
+  const ongId = localStorage.getItem('ongId'); // pegando o aramazenamento local
+  const [incidents, setIncidents] = useState([]); 
 
   const history = useHistory();
 

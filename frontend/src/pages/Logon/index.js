@@ -18,12 +18,12 @@ export default function Logon(){
 
     try{
 
-      const response = await api.post('sessions', {id});
+      const response = await api.post('sessions', {id});// fazendo a conexão da rota com back end, e verificando a regra de negocio
 
-       localStorage.setItem('ongId', id);
-       localStorage.setItem('ongName', response.data.name)
+       localStorage.setItem('ongId', id); // armazenamento local
+       localStorage.setItem('ongName', response.data.name)// aramazenamento local
 
-      history.push('/profile');
+      history.push('/profile'); // redirencionando para profile apos verificar o id corrento
     } catch(err){
 
       alert('Falha no login tente novamente')

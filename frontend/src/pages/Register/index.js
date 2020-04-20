@@ -19,7 +19,7 @@ export default function Register() {
   const [city, setCity] = useState('');
   const [uf, setUf] = useState('');
 
-  async function handleRegister(event) { // functionresponsável por fazer o cadastro do usuário
+  async function handleRegister(event) { // function responsável por fazer o cadastro do usuário
 
     event.preventDefault();//tirando comportamento padrão do formulário
 
@@ -33,16 +33,20 @@ export default function Register() {
     };
 
     try {/* enviado o metodo post */ 
-      const response = await api.post('/ongs', data); /* data = enviado dados do formualrio */
+      const response = await api.post('/ongs', data); /* enviado para rota do back end */
     
       alert(`Seu ID de acesso: ${response.data.id}`);
 
-      history.push('/'); //direcionando para pagina iniical
+      history.push('/'); //enviado usuário de volta para page de login
+      
+    
 
     } catch (error) {// else
 
       alert('Erro no cadastro, tente novamente!');
     }
+
+
   }/* fim da function handleRegister */
 
   return (
